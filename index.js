@@ -48,7 +48,6 @@ start_btn.addEventListener("click", () => {
 
 stop_btn.addEventListener("click", () => {
   window.clearInterval(interval);
- 
 });
 reset_btn.addEventListener("click", () => {
   window.clearInterval(interval);

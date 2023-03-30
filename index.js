@@ -9,6 +9,7 @@ let displayHours = 0;
 
 let interval = null;
 
+let result="stopped";
 function stopWatch() {
   seconds++;
   if (seconds / 60 === 1) {
@@ -39,20 +40,36 @@ function stopWatch() {
 }
 
 const start_btn = document.querySelector("#start");
-const stop_btn = document.querySelector("#stop");
+// const stop_btn = document.querySelector("#stop");
 const reset_btn = document.querySelector("#reset");
 
 start_btn.addEventListener("click", () => {
-  interval = window.setInterval(stopWatch, 1);
+  if(result==="stopped"){
+  interval = window.setInterval(stopWatch, 1000);
+  start_btn.innerHTML='<i class="bi bi-pause-fill"></i>';
+  start_btn.style.backgroundColor="red";
+  result="started";
+  }
+  else{
+    window.clearInterval(interval);
+    start_btn.innerHTML='<i class="bi bi-play-fill"></i>';
+    start_btn.style.backgroundColor="green";
+    result="stopped";
+  }
 });
 
-stop_btn.addEventListener("click", () => {
-  window.clearInterval(interval);
-});
+// stop_btn.addEventListener("click", () => {
+//   window.clearInterval(interval);
+// });
 reset_btn.addEventListener("click", () => {
   window.clearInterval(interval);
+  if(result=="started"){
+  start_btn.innerHTML='<i class="bi bi-play-fill"></i>';
+  start_btn.style.backgroundColor="green";
+  }
+  result="stopped";
   seconds = 0;
   minutes = 0;
   hours = 0;
-  display.innerHTML = "00:00:00";
+  display.innerText = "00:00:00";
 });

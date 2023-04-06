@@ -33,6 +33,7 @@ body {
 }
 button i {
   font-size: 25px;
+  
 }
 #start {
   background-color: green;
@@ -47,14 +48,14 @@ button i {
   border: 1px solid gray;
   margin: auto;
   position: relative;
-  top: 20px;
-  transition: 0.5s;
+ 
+  
 }
 .indicator {
   position: absolute;
   width: 38px;
   height: 38px;
-  background-color: rgb(230, 229, 229);
+  background-color: black;
   border-radius: 50%;
   border: 1px solid rgb(116, 115, 115);
   transition: 0.5s;

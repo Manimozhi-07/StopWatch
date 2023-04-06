@@ -78,10 +78,10 @@ const body = document.body;
 indicator.addEventListener("click", () => {
   body.classList.toggle("active");
   if (body.classList.contains("active")) {
-    indicator.style.backgroundColor = "black";
+    indicator.style.backgroundColor = "rgb(230, 229, 229)";
     indicator.style.left = "42px";
   } else {
-    indicator.style.backgroundColor = "rgb(230, 229, 229)";
+    indicator.style.backgroundColor = "black";
     indicator.style.left = "0px";
   }
 });

@@ -15,6 +15,7 @@ body {
 }
 .main {
   margin: auto;
+  padding: 20px;
 }
 .display {
   font-size: 50px;
@@ -38,4 +39,28 @@ button i {
 }
 #reset {
   background-color: orangered;
+}
+.mode {
+  width: 80px;
+  height: 40px;
+  border-radius: 30px;
+  border: 1px solid gray;
+  margin: auto;
+  position: relative;
+  top: 20px;
+  transition: 0.5s;
+}
+.indicator {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  background-color: rgb(230, 229, 229);
+  border-radius: 50%;
+  border: 1px solid rgb(116, 115, 115);
+  transition: 0.5s;
+}
+.active {
+  background-color: rgba(0, 0, 0, 0.884);
+  color: white;
+
 }

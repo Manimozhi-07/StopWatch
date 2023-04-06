@@ -9,7 +9,7 @@ let displayHours = 0;
 
 let interval = null;
 
-let result="stopped";
+let result = "stopped";
 function stopWatch() {
   seconds++;
   if (seconds / 60 === 1) {
@@ -44,17 +44,16 @@ const start_btn = document.querySelector("#start");
 const reset_btn = document.querySelector("#reset");
 
 start_btn.addEventListener("click", () => {
-  if(result==="stopped"){
-  interval = window.setInterval(stopWatch, 1000);
-  start_btn.innerHTML='<i class="bi bi-pause-fill"></i>';
-  start_btn.style.backgroundColor="red";
-  result="started";
-  }
-  else{
+  if (result === "stopped") {
+    interval = window.setInterval(stopWatch, 1000);
+    start_btn.innerHTML = '<i class="bi bi-pause-fill"></i>';
+    start_btn.style.backgroundColor = "red";
+    result = "started";
+  } else {
     window.clearInterval(interval);
-    start_btn.innerHTML='<i class="bi bi-play-fill"></i>';
-    start_btn.style.backgroundColor="green";
-    result="stopped";
+    start_btn.innerHTML = '<i class="bi bi-play-fill"></i>';
+    start_btn.style.backgroundColor = "green";
+    result = "stopped";
   }
 });
 
@@ -63,13 +62,28 @@ start_btn.addEventListener("click", () => {
 // });
 reset_btn.addEventListener("click", () => {
   window.clearInterval(interval);
-  if(result=="started"){
-  start_btn.innerHTML='<i class="bi bi-play-fill"></i>';
-  start_btn.style.backgroundColor="green";
+  if (result == "started") {
+    start_btn.innerHTML = '<i class="bi bi-play-fill"></i>';
+    start_btn.style.backgroundColor = "green";
   }
-  result="stopped";
+  result = "stopped";
   seconds = 0;
   minutes = 0;
   hours = 0;
   display.innerText = "00:00:00";
 });
+
+const indicator = document.querySelector(".indicator");
+const body = document.body;
+indicator.addEventListener("click", () => {
+  body.classList.toggle("active");
+  if (body.classList.contains("active")) {
+    indicator.style.backgroundColor = "black";
+    indicator.style.left = "42px";
+  } else {
+    indicator.style.backgroundColor = "rgb(230, 229, 229)";
+    indicator.style.left = "0px";
+  }
+});
+
+

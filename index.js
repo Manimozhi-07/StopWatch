@@ -79,7 +79,7 @@ indicator.addEventListener("click", () => {
   body.classList.toggle("active");
   if (body.classList.contains("active")) {
     indicator.style.backgroundColor = "rgb(230, 229, 229)";
-    indicator.style.left = "42px";
+    indicator.style.left = "40px";
   } else {
     indicator.style.backgroundColor = "black";
     indicator.style.left = "0px";
